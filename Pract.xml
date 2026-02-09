@@ -1,0 +1,28 @@
+<!DOCTYPE timeTable [
+<!ELEMENT timeTable (complexes, lessons)>
+<!ELEMENT complexes (complex+)>
+<!ELEMENT lessons (lesson+)>
+<!ELEMENT complex (name, address)>
+<!ELEMENT lesson (date, time)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ATTLIST complex code ID #REQUIRED>
+<!ATTLIST lesson 
+no ID #REQUIRED
+complex IDREF #REQUIRED>]>
+<timeTable>
+  <complexes>
+    <complex code="c1">
+      <name>English</name>
+      <address>Вднх</address>
+    </complex>
+  </complexes>
+  <lessons>
+    <lesson no="lessons1" complex="c1">
+      <date>09.02.2026</date>
+      <time>11.00</time>
+    </lesson>
+  </lessons>
+</timeTable>
